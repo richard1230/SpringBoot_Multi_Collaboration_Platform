@@ -1,0 +1,16 @@
+.idea/
+.gradle/
+build/
+out/
+target/
+*.iml
+
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+vue-blog-preview/
+mysql-data/
+.DS_Store
+jenkins-data/
