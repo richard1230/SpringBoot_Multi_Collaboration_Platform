@@ -1,6 +1,8 @@
 package hello.controller;
 
 
+import com.mysql.cj.log.Log;
+import hello.entity.LoginResult;
 import hello.entity.Result;
 import hello.entity.User;
 import hello.service.UserService;
@@ -37,7 +39,7 @@ public class AuthController {
 
     @GetMapping("/auth")//这个接口用于判断用户登录状态
     @ResponseBody
-    public Object auth() {
+    public Result auth() {
 
 //        String userName = SecurityContextHolder.getContext().getAuthentication().getName();
 
@@ -46,10 +48,10 @@ public class AuthController {
         //用户状态的维持是通过cookies
         User loggedInUser = userService.getUserByUsername(authentication == null ? null : authentication.getName());
         if (loggedInUser == null) {
-            return Result.failure("user is not login");
+            return LoginResult.success("user is not login",false);
 //            return new Result("fail", "用户没有登录", false);
         } else {
-            return Result.success(null, true, loggedInUser);
+            return LoginResult.success(null, true, loggedInUser);
 //            return new Result("ok", null, true, loggedInUser);
         }
     }
@@ -64,11 +66,11 @@ public class AuthController {
         User loggedInUser = userService.getUserByUsername(userName);
         if (loggedInUser == null) {
             //static factory method
-            return Result.failure("user is not login");
+            return LoginResult.failure("user is not login");
         } else {
             //登出就是将其上下文状态清掉
             SecurityContextHolder.clearContext();//需要google一下
-            return Result.success("logout success", false, null);
+            return LoginResult.success("success", false);
 //            return new Result("ok", "logout success", false);
         }
     }
@@ -97,7 +99,7 @@ public class AuthController {
         } catch (DuplicateKeyException e) {
             return Result.failure("user alreadly exists");
         }
-        return Result.success("success!!!", false, null);
+        return LoginResult.success("success!!!", false);
 //        return new Result("ok","success!!!",false);
 
 
@@ -127,7 +129,7 @@ public class AuthController {
             //cookies
             SecurityContextHolder.getContext().setAuthentication(token);
 //            User loggerInUser = new User(1, "Zhangsan");
-            return Result.success("登陆成功", true, userService.getUserByUsername(username));
+            return LoginResult.success("登陆成功", true, userService.getUserByUsername(username));
 //            return new Result("ok", "登录成功", true, userService.getUserByUsername(username));
         } catch (BadCredentialsException e) {
             return Result.failure("密码不正确");

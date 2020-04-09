@@ -1,140 +1,265 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.2.2.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>spring-boot</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-boot</name>
-	<description>Demo project for Spring Boot</description>
-<!--	<properties>-->
-<!--		<maven.compiler.source>1.8</maven.compiler.source>-->
-<!--		<maven.compiler.target>1.8</maven.compiler.target>-->
-<!--		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
-<!--	</properties>-->
-<!--	<properties>-->
-<!--		<junit-jupiter.version>5.6.0</junit-jupiter.version>-->
-<!--	</properties>-->
-<repositories>
-    <repository>
-        <id>alimaven</id>
-        <name>aliyun maven</name>
-        <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-    </repository>
-</repositories>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.2.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.example</groupId>
+    <artifactId>spring-boot</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>spring-boot</name>
+    <description>Demo project for Spring Boot</description>
+    <!--	<properties>-->
+    <!--		<maven.compiler.source>1.8</maven.compiler.source>-->
+    <!--		<maven.compiler.target>1.8</maven.compiler.target>-->
+    <!--		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
+    <!--	</properties>-->
+    <!--	<properties>-->
+    <!--		<junit-jupiter.version>5.6.0</junit-jupiter.version>-->
+    <!--	</properties>-->
+    <repositories>
+        <repository>
+            <id>alimaven</id>
+            <name>aliyun maven</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
 
-	<properties>
-		<java.version>1.8</java.version>
-		<junit-jupiter.version>5.6.0</junit-jupiter.version>
-	</properties>
+    <properties>
+        <java.version>11</java.version>
+        <junit-jupiter.version>5.6.0</junit-jupiter.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+<!--       <maven.compiler.compilerVersion>11</maven.compiler.compilerVersion>-->
+    </properties>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.junit.vintage</groupId>
-					<artifactId>junit-vintage-engine</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/javax.inject/javax.inject -->
-		<dependency>
-			<groupId>javax.inject</groupId>
-			<artifactId>javax.inject</artifactId>
-			<version>1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.mybatis.spring.boot</groupId>
-			<artifactId>mybatis-spring-boot-starter</artifactId>
-			<version>2.1.1</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.19</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/javax.inject/javax.inject -->
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>2.1.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.19</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
 
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-api</artifactId>
-			<version>5.6.1</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-engine</artifactId>
-			<version>5.6.1</version>
-			<scope>test</scope>
-		</dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.6.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.6.1</version>
+            <scope>test</scope>
+        </dependency>
 
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-junit-jupiter</artifactId>
-			<version>3.3.3</version>
-			<scope>test</scope>
-		</dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>3.3.3</version>
+            <scope>test</scope>
+        </dependency>
 
 
-	</dependencies>
+    </dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
 
-					<plugin>
-						<artifactId>maven-surefire-plugin</artifactId>
-						<version>2.22.2</version>
-						<configuration>
-							<excludes>
-								<exclude>**/*IntegrationTest</exclude>
-							</excludes>
-						</configuration>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+                <configuration>
+                    <excludes>
+                        <exclude>**/*IntegrationTest</exclude>
+                    </excludes>
+                </configuration>
 
-					</plugin>
-					<plugin>
-						<artifactId>maven-failsafe-plugin</artifactId>
-						<version>2.22.2</version>
-						<configuration>
-							<includes>
-								<include>**/*IntegrationTest</include>
-							</includes>
-						</configuration>
-					</plugin>
+            </plugin>
+            <plugin>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>2.22.2</version>
+                <configuration>
+                    <includes>
+                        <include>**/*IntegrationTest</include>
+                    </includes>
+                </configuration>
+            </plugin>
 
-			<plugin>
-				<groupId>org.flywaydb</groupId>
-				<artifactId>flyway-maven-plugin</artifactId>
-				<version>6.3.2</version>
-				<configuration>
-					<url>jdbc:mysql://localhost:3306/xdml</url>
-					<user>root</user>
-					<password>123456</password>
-				</configuration>
-			</plugin>
 
-		</plugins>
-	</build>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <executions>
+                    <execution>
+                        <id>start-test-database</id>
+                        <!--					绑定的阶段-->
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <!--						这里为外部执行命令-->
+                            <goal>exec</goal>
+                        </goals>
+
+                        <configuration>
+                            <longModulepath>false</longModulepath>
+                            <executable>docker</executable>
+                            <!--						里面是执行的命令-->
+                            <arguments>
+                                <argument>run</argument>
+                                <argument>--name</argument>
+                                <argument>test-mysql</argument>
+                                <argument>-e</argument>
+                                <argument>MYSQL_ROOT_PASSWORD=123456</argument>
+                                <argument>-e</argument>
+                                <argument>MYSQL_DATABASE=testxdml</argument>
+                                <argument>-p</argument>
+                                <argument>3307:3307</argument>
+                                <argument>-d</argument>
+                                <argument>mysql:5.7.29</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                    <!--这里新增了一个执行-->
+                    <execution>
+                        <id>logs-test-database</id>
+                        <!--					绑定的阶段-->
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <!--这里为外部执行命令-->
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <longModulepath>false</longModulepath>
+                            <executable>docker</executable>
+                            <!--						里面是执行的命令-->
+                            <arguments>
+                                <argument>logs</argument>
+                                <argument>test-mysql</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                    <!--这里新增了一个执行-->
+                    <execution>
+                        <id>wait-test-database</id>
+                        <!--					绑定的阶段-->
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <!--这里为外部执行命令-->
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <longModulepath>false</longModulepath>
+                            <executable>sleep</executable>
+                            <!--						里面是执行的命令-->
+                            <arguments>
+                                <argument>25</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                    <!--				这里新增了一个执行-->
+                    <execution>
+                        <id>teardown-test-database</id>
+                        <!--					绑定的阶段-->
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <!--这里为外部执行命令-->
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <longModulepath>false</longModulepath>
+                            <executable>docker</executable>
+                            <!--						里面是执行的命令-->
+                            <arguments>
+                                <argument>rm</argument>
+                                <argument>-f</argument>
+                                <argument>test-mysql</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>6.3.2</version>
+                <configuration>
+                    <url>jdbc:mysql://localhost:3306/xdml</url>
+                    <user>root</user>
+                    <password>123456</password>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>test-database-setup</id>
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <!--							mvn flayway migrate-->
+                            <goal>migrate</goal>
+                        </goals>
+                        <configuration>
+                            <!--							这里是测试之前启动的临时的一个数据库-->
+                            <url>jdbc:mysql://localhost:3307/testxdml</url>
+                            <user>root</user>
+                            <password>123456</password>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
 
 </project>

@@ -1,4 +1,5 @@
-create table user (id int primary key ,
+create table user (
+id bigint primary key auto_increment,
 username varchar(50),
 encrypted_password varchar(200),
 avatar varchar(100),
