@@ -26,7 +26,8 @@ public class AuthController {
     private UserService userService;
     private AuthenticationManager authenticationManager;
 
-    @Inject//这里推荐的是构造器注入
+    //这里推荐的是构造器注入
+    @Inject
     public AuthController(UserService userService,
                           AuthenticationManager authenticationManager) {
         this.userService = userService;
